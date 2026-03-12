@@ -1,20 +1,20 @@
-from data import question_data 
-from question_model import Preguntas
-from quiz_brain import Brain
+from preguntas import base_de_preguntas 
+from model_de_pregunta import Preguntas
+from cerebro_del_juego import Cerebro
 
-question_bank = []
+banco_de_preguntas = []
 
-for questions in question_data:
-    question_text = questions["pregunta"]
-    question_answer = questions["respuesta"]
-    question_explicacion = questions["explicacion"]
-    new_question = Preguntas(question_text, question_answer, question_explicacion)
-    question_bank.append(new_question)
+for questions in base_de_preguntas:
+    pregunta_pregunta = questions["pregunta"]
+    pregunta_respuesta = questions["respuesta"]
+    pregunta_explicacion = questions["explicacion"]
+    nueva_pregunta = Preguntas(pregunta_pregunta, pregunta_respuesta, pregunta_explicacion)
+    banco_de_preguntas.append(nueva_pregunta)
 
-quiz = Brain(question_bank)
+pregunta = Cerebro(banco_de_preguntas)
 
-while quiz.still_has_questions():
-    quiz.next_question()
+while pregunta.still_has_questions():
+    pregunta.next_question()
 
 print("Termino el cuestionario")
-print(f"Su puntaje es {quiz.score} de {quiz.numero_de_pregunta}")
+print(f"Su puntaje es {pregunta.score} de {pregunta.numero_de_pregunta}")

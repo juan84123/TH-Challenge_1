@@ -1,4 +1,4 @@
-question_data = [
+base_de_preguntas = [
   {
     "pregunta": "¿Es obligatorio usar 'self' como primer parámetro en los métodos de instancia?",
     "respuesta": "verdadero",

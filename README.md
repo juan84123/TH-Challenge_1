@@ -28,14 +28,13 @@ Objetivos del Challenge
     Encapsulamiento: Proteger atributos críticos. La lógica debe vivir dentro de las clases, no afuera.
 
 2. Clase Game (El Motor)
-Debe existir una clase responsable de:
+    Debe existir una clase responsable de:
     Inicializar el juego y controlar el loop principal.
     Coordinar interacciones y determinar el fin de la partida.
     Nada de lógica flotando en el main.
 
 3. Estructura y Modularización
-
-El código debe estar separado en 3 zonas lógicas:
+    El código debe estar separado en 3 zonas lógicas:
     Dominio: Entidades y reglas.
     Motor: Clase Game (coordinación).
     UI Consola: Impresión de estado y lectura de inputs.
