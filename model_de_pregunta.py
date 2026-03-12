@@ -3,4 +3,3 @@ class Preguntas:
         self.pregunta = pregunta
         self.respuesta = respuesta
         self.explicacion = explicacion
-
