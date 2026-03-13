@@ -12,4 +12,3 @@ class InterfazConsola:
     def finalizar_juego(self, score, total):
         print("--- Cuestionario Finalizado ---")
         print(f"Tu puntaje final es: {score}/{total}")
-    
