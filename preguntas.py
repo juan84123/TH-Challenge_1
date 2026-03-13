@@ -18,5 +18,54 @@ base_de_preguntas = [
   {"tipo": "VF", "pregunta": "¿Se puede heredar de clases integradas como 'list' o 'dict'?", "respuesta": "verdadero", "explicacion": "Permite extender o modificar el comportamiento de las colecciones estándar de Python."},
   {"tipo": "VF", "pregunta": "¿El atributo __slots__ permite que los objetos ocupen más memoria?", "respuesta": "falso", "explicacion": "Al contrario, optimiza la memoria al evitar la creación del diccionario __dict__ para la instancia."},
   {"tipo": "VF", "pregunta": "¿El método mágico __call__ permite invocar una instancia como si fuera una función?", "respuesta": "verdadero", "explicacion": "Al definirlo, puedes hacer algo como `objeto()` y ejecutar lógica interna."},
-  {"tipo": "VF", "pregunta": "¿La composición se prefiere a menudo sobre la herencia para mayor flexibilidad?", "respuesta": "verdadero", "explicacion": "Inyectar objetos en otros reduce el acoplamiento rígido de las jerarquías de herencia."}
+  {"tipo": "VF", "pregunta": "¿La composición se prefiere a menudo sobre la herencia para mayor flexibilidad?", "respuesta": "verdadero", "explicacion": "Inyectar objetos en otros reduce el acoplamiento rígido de las jerarquías de herencia."},
+  {
+        "tipo": "Multiple",
+        "pregunta": "¿Qué pilar de la POO permite ocultar la complejidad interna y mostrar solo lo necesario?",
+        "opciones": ["A) Herencia", "B) Abstracción", "C) Polimorfismo"],
+        "respuesta": "b",
+        "explicacion": "La Abstracción se enfoca en el 'qué hace' un objeto en lugar de 'cómo lo hace' internamente."
+  },
+  {
+        "tipo": "Multiple",
+        "pregunta": "¿Cómo se le llama a la capacidad de un objeto de tomar diferentes formas?",
+        "opciones": ["A) Polimorfismo", "B) Encapsulamiento", "C) Mutación"],
+        "respuesta": "a",
+        "explicacion": "El Polimorfismo permite que diferentes clases respondan al mismo mensaje o método de manera específica."
+  },
+  {
+        "tipo": "Multiple",
+        "pregunta": "¿Qué palabra clave se utiliza en Python para heredar de una clase base?",
+        "opciones": ["A) extends", "B) (NombreClaseBase) entre paréntesis", "C) inherit"],
+        "respuesta": "b",
+        "explicacion": "En Python, la herencia se define pasando la clase base como argumento al definir la clase hija: class Hija(Base):."
+  },
+  {
+        "tipo": "Multiple",
+        "pregunta": "¿Para qué sirve el método super() en una clase hija?",
+        "opciones": ["A) Para crear una superclase", "B) Para llamar a métodos de la clase padre", "C) Para finalizar el programa"],
+        "respuesta": "b",
+        "explicacion": "super() devuelve un objeto temporal de la superclase que permite invocar sus métodos (especialmente el __init__)."
+  },
+  {
+        "tipo": "Multiple",
+        "pregunta": "¿Cuál es la función principal del Encapsulamiento?",
+        "opciones": ["A) Hacer el código más rápido", "B) Proteger los datos internos de accesos no autorizados", "C) Copiar atributos de otra clase"],
+        "respuesta": "b",
+        "explicacion": "El encapsulamiento restringe el acceso directo a los datos para evitar modificaciones accidentales o incorrectas."
+  },
+  {
+        "tipo": "Multiple",
+        "pregunta": "En Python, ¿qué significa que un atributo empiece con doble guion bajo (__) ?",
+        "opciones": ["A) Es un atributo público", "B) Activa el 'name mangling' para hacerlo privado", "C) Es un error de sintaxis"],
+        "respuesta": "b",
+        "explicacion": "Python renombra internamente el atributo para dificultar su acceso desde fuera de la clase."
+  },
+  {
+        "tipo": "Multiple",
+        "pregunta": "¿Qué módulo se debe importar para crear clases abstractas en Python?",
+        "opciones": ["A) random", "B) abc", "C) math"],
+        "respuesta": "b",
+        "explicacion": "El módulo 'abc' (Abstract Base Classes) proporciona las herramientas necesarias para definir abstracciones."
+  }
 ]

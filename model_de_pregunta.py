@@ -20,8 +20,19 @@ class Preguntas(ABC):
 
     @abstractmethod
     def es_correcta(self, respuesta):
+        #Este método es obligatorio para todos los hijos
         pass
 
 class PreguntaVoF(Preguntas):
     def es_correcta(self, respuesta):  
+        return respuesta.lower() == self.respuesta
+
+class PreguntaMultiple(Preguntas):
+    def __init__(self, tipo, pregunta, opciones, respuesta, explicacion):
+        # Usamos super() para los datos básicos y agregamos 'opciones'
+        super().__init__(tipo, pregunta, respuesta, explicacion)#ver que hace ese super()
+        self.opciones = opciones
+        
+    def es_correcta(self, respuesta):
+        # Comparamos la letra que elija el usuario (ej: "a") con la respuesta
         return respuesta.lower() == self.respuesta
