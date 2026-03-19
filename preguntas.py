@@ -1,71 +1,235 @@
 base_de_preguntas = [
-  {"tipo": "VF", "pregunta": "¿Es obligatorio usar 'self' como primer parámetro en los métodos de instancia?", "respuesta": "verdadero", "explicacion": "Aunque podrías usar otro nombre, 'self' es la convención estándar para referirse a la instancia actual."},
-  {"tipo": "VF", "pregunta": "¿Python soporta herencia múltiple de forma nativa?", "respuesta": "verdadero", "explicacion": "Una clase en Python puede heredar de múltiples clases base, resolviendo conflictos mediante el MRO."},
-  {"tipo": "VF", "pregunta": "¿El método __init__ es el constructor encargado de crear el objeto?", "respuesta": "falso", "explicacion": "El método __new__ crea la instancia; __init__ solo la inicializa una vez creada."},
-  {"tipo": "VF", "pregunta": "¿Python utiliza el algoritmo MRO (Method Resolution Order) para organizar la herencia?", "respuesta": "verdadero", "explicacion": "Utiliza la linealización C3 para determinar el orden de búsqueda de métodos en jerarquías complejas."},
-  {"tipo": "VF", "pregunta": "¿Existen modificadores de acceso estrictos (como private) que impidan el acceso externo?", "respuesta": "falso", "explicacion": "Python se basa en convenciones; el guion bajo (_) es solo un aviso para el programador."},
-  {"tipo": "VF", "pregunta": "¿Un método decorado con @staticmethod requiere el parámetro 'self'?", "respuesta": "falso", "explicacion": "Los métodos estáticos no reciben automáticamente ni la instancia ni la clase como argumento."},
-  {"tipo": "VF", "pregunta": "¿El decorador @classmethod recibe la clase (cls) como primer argumento?", "respuesta": "verdadero", "explicacion": "Esto permite que el método acceda a atributos de clase o cree nuevas instancias (factory methods)."},
-  {"tipo": "VF", "pregunta": "¿En Python, incluso las funciones y los números son objetos?", "respuesta": "verdadero", "explicacion": "Todo en Python deriva de la clase base 'object', lo que permite que funciones tengan atributos."},
-  {"tipo": "VF", "pregunta": "¿La función super() se utiliza para llamar a métodos de la superclase?", "respuesta": "verdadero", "explicacion": "Busca el siguiente método en el orden definido por el MRO de la clase actual."},
-  {"tipo": "VF", "pregunta": "¿Es posible añadir nuevos atributos a un objeto después de que haya sido creado?", "respuesta": "verdadero", "explicacion": "Debido a su naturaleza dinámica, puedes asignar valores a atributos inexistentes en tiempo de ejecución."},
-  {"tipo": "VF", "pregunta": "¿El uso de doble guion bajo (__nombre) activa el 'name mangling'?", "respuesta": "verdadero", "explicacion": "Python renombra internamente el atributo para evitar colisiones accidentales en subclases."},
-  {"tipo": "VF", "pregunta": "¿Las clases abstractas en Python se crean heredando del módulo 'abc'?", "respuesta": "verdadero", "explicacion": "Se usa la clase ABC y el decorador @abstractmethod para definir la interfaz obligatoria."},
-  {"tipo": "VF", "pregunta": "¿El método mágico __str__ define la representación del objeto para el usuario final?", "respuesta": "verdadero", "explicacion": "Es el método que se invoca automáticamente al usar la función print() o str()."},
-  {"tipo": "VF", "pregunta": "¿El 'duck typing' prioriza el tipo de clase sobre el comportamiento del objeto?", "respuesta": "falso", "explicacion": "Prioriza el comportamiento: si el objeto tiene los métodos necesarios, se acepta sin importar su clase."},
-  {"tipo": "VF", "pregunta": "¿El decorador @property permite usar un método como si fuera un atributo de lectura?", "respuesta": "verdadero", "explicacion": "Facilita la creación de getters limpios sin cambiar la sintaxis de acceso externa."},
-  {"tipo": "VF", "pregunta": "¿Las 'dataclasses' generan automáticamente métodos como __init__ y __repr__?", "respuesta": "verdadero", "explicacion": "Ahorran código repetitivo al definir clases cuyo propósito principal es almacenar datos."},
-  {"tipo": "VF", "pregunta": "¿Se puede heredar de clases integradas como 'list' o 'dict'?", "respuesta": "verdadero", "explicacion": "Permite extender o modificar el comportamiento de las colecciones estándar de Python."},
-  {"tipo": "VF", "pregunta": "¿El atributo __slots__ permite que los objetos ocupen más memoria?", "respuesta": "falso", "explicacion": "Al contrario, optimiza la memoria al evitar la creación del diccionario __dict__ para la instancia."},
-  {"tipo": "VF", "pregunta": "¿El método mágico __call__ permite invocar una instancia como si fuera una función?", "respuesta": "verdadero", "explicacion": "Al definirlo, puedes hacer algo como `objeto()` y ejecutar lógica interna."},
-  {"tipo": "VF", "pregunta": "¿La composición se prefiere a menudo sobre la herencia para mayor flexibilidad?", "respuesta": "verdadero", "explicacion": "Inyectar objetos en otros reduce el acoplamiento rígido de las jerarquías de herencia."},
-  {
+    {
+        "tipo": "VF",
+        "pregunta": "¿Es obligatorio usar 'self' como primer parámetro en los métodos de instancia?",
+        "respuesta": "verdadero",
+        "explicacion": "Aunque podrías usar otro nombre, 'self' es la convención estándar para referirse a la instancia actual.",
+    },
+    {
+        "tipo": "VF",
+        "pregunta": "¿Python soporta herencia múltiple de forma nativa?",
+        "respuesta": "verdadero",
+        "explicacion": "Una clase en Python puede heredar de múltiples clases base, resolviendo conflictos mediante el MRO.",
+    },
+    {
+        "tipo": "VF",
+        "pregunta": "¿El método __init__ es el constructor encargado de crear el objeto?",
+        "respuesta": "falso",
+        "explicacion": "El método __new__ crea la instancia; __init__ solo la inicializa una vez creada.",
+    },
+    {
+        "tipo": "VF",
+        "pregunta": "¿Python utiliza el algoritmo MRO (Method Resolution Order) para organizar la herencia?",
+        "respuesta": "verdadero",
+        "explicacion": "Utiliza la linealización C3 para determinar el orden de búsqueda de métodos en jerarquías complejas.",
+    },
+    {
+        "tipo": "VF",
+        "pregunta": "¿Existen modificadores de acceso estrictos (como private) que impidan el acceso externo?",
+        "respuesta": "falso",
+        "explicacion": "Python se basa en convenciones; el guion bajo (_) es solo un aviso para el programador.",
+    },
+    {
+        "tipo": "VF",
+        "pregunta": "¿Un método decorado con @staticmethod requiere el parámetro 'self'?",
+        "respuesta": "falso",
+        "explicacion": "Los métodos estáticos no reciben automáticamente ni la instancia ni la clase como argumento.",
+    },
+    {
+        "tipo": "VF",
+        "pregunta": "¿El decorador @classmethod recibe la clase (cls) como primer argumento?",
+        "respuesta": "verdadero",
+        "explicacion": "Esto permite que el método acceda a atributos de clase o cree nuevas instancias (factory methods).",
+    },
+    {
+        "tipo": "VF",
+        "pregunta": "¿En Python, incluso las funciones y los números son objetos?",
+        "respuesta": "verdadero",
+        "explicacion": "Todo en Python deriva de la clase base 'object', lo que permite que funciones tengan atributos.",
+    },
+    {
+        "tipo": "VF",
+        "pregunta": "¿La función super() se utiliza para llamar a métodos de la superclase?",
+        "respuesta": "verdadero",
+        "explicacion": "Busca el siguiente método en el orden definido por el MRO de la clase actual.",
+    },
+    {
+        "tipo": "VF",
+        "pregunta": "¿Es posible añadir nuevos atributos a un objeto después de que haya sido creado?",
+        "respuesta": "verdadero",
+        "explicacion": "Debido a su naturaleza dinámica, puedes asignar valores a atributos inexistentes en tiempo de ejecución.",
+    },
+    {
+        "tipo": "VF",
+        "pregunta": "¿El uso de doble guion bajo (__nombre) activa el 'name mangling'?",
+        "respuesta": "verdadero",
+        "explicacion": "Python renombra internamente el atributo para evitar colisiones accidentales en subclases.",
+    },
+    {
+        "tipo": "VF",
+        "pregunta": "¿Las clases abstractas en Python se crean heredando del módulo 'abc'?",
+        "respuesta": "verdadero",
+        "explicacion": "Se usa la clase ABC y el decorador @abstractmethod para definir la interfaz obligatoria.",
+    },
+    {
+        "tipo": "VF",
+        "pregunta": "¿El método mágico __str__ define la representación del objeto para el usuario final?",
+        "respuesta": "verdadero",
+        "explicacion": "Es el método que se invoca automáticamente al usar la función print() o str().",
+    },
+    {
+        "tipo": "VF",
+        "pregunta": "¿El 'duck typing' prioriza el tipo de clase sobre el comportamiento del objeto?",
+        "respuesta": "falso",
+        "explicacion": "Prioriza el comportamiento: si el objeto tiene los métodos necesarios, se acepta sin importar su clase.",
+    },
+    {
+        "tipo": "VF",
+        "pregunta": "¿El decorador @property permite usar un método como si fuera un atributo de lectura?",
+        "respuesta": "verdadero",
+        "explicacion": "Facilita la creación de getters limpios sin cambiar la sintaxis de acceso externa.",
+    },
+    {
+        "tipo": "VF",
+        "pregunta": "¿Las 'dataclasses' generan automáticamente métodos como __init__ y __repr__?",
+        "respuesta": "verdadero",
+        "explicacion": "Ahorran código repetitivo al definir clases cuyo propósito principal es almacenar datos.",
+    },
+    {
+        "tipo": "VF",
+        "pregunta": "¿Se puede heredar de clases integradas como 'list' o 'dict'?",
+        "respuesta": "verdadero",
+        "explicacion": "Permite extender o modificar el comportamiento de las colecciones estándar de Python.",
+    },
+    {
+        "tipo": "VF",
+        "pregunta": "¿El atributo __slots__ permite que los objetos ocupen más memoria?",
+        "respuesta": "falso",
+        "explicacion": "Al contrario, optimiza la memoria al evitar la creación del diccionario __dict__ para la instancia.",
+    },
+    {
+        "tipo": "VF",
+        "pregunta": "¿El método mágico __call__ permite invocar una instancia como si fuera una función?",
+        "respuesta": "verdadero",
+        "explicacion": "Al definirlo, puedes hacer algo como `objeto()` y ejecutar lógica interna.",
+    },
+    {
+        "tipo": "VF",
+        "pregunta": "¿La composición se prefiere a menudo sobre la herencia para mayor flexibilidad?",
+        "respuesta": "verdadero",
+        "explicacion": "Inyectar objetos en otros reduce el acoplamiento rígido de las jerarquías de herencia.",
+    },
+    {
         "tipo": "Multiple",
         "pregunta": "¿Qué pilar de la POO permite ocultar la complejidad interna y mostrar solo lo necesario?",
         "opciones": ["A) Herencia", "B) Abstracción", "C) Polimorfismo"],
         "respuesta": "b",
-        "explicacion": "La Abstracción se enfoca en el 'qué hace' un objeto en lugar de 'cómo lo hace' internamente."
-  },
-  {
+        "explicacion": "La Abstracción se enfoca en el 'qué hace' un objeto en lugar de 'cómo lo hace' internamente.",
+    },
+    {
         "tipo": "Multiple",
         "pregunta": "¿Cómo se le llama a la capacidad de un objeto de tomar diferentes formas?",
         "opciones": ["A) Polimorfismo", "B) Encapsulamiento", "C) Mutación"],
         "respuesta": "a",
-        "explicacion": "El Polimorfismo permite que diferentes clases respondan al mismo mensaje o método de manera específica."
-  },
-  {
+        "explicacion": "El Polimorfismo permite que diferentes clases respondan al mismo mensaje o método de manera específica.",
+    },
+    {
         "tipo": "Multiple",
         "pregunta": "¿Qué palabra clave se utiliza en Python para heredar de una clase base?",
-        "opciones": ["A) extends", "B) (NombreClaseBase) entre paréntesis", "C) inherit"],
+        "opciones": [
+            "A) extends",
+            "B) (NombreClaseBase) entre paréntesis",
+            "C) inherit",
+        ],
         "respuesta": "b",
-        "explicacion": "En Python, la herencia se define pasando la clase base como argumento al definir la clase hija: class Hija(Base):."
-  },
-  {
+        "explicacion": "En Python, la herencia se define pasando la clase base como argumento al definir la clase hija: class Hija(Base):.",
+    },
+    {
         "tipo": "Multiple",
         "pregunta": "¿Para qué sirve el método super() en una clase hija?",
-        "opciones": ["A) Para crear una superclase", "B) Para llamar a métodos de la clase padre", "C) Para finalizar el programa"],
+        "opciones": [
+            "A) Para crear una superclase",
+            "B) Para llamar a métodos de la clase padre",
+            "C) Para finalizar el programa",
+        ],
         "respuesta": "b",
-        "explicacion": "super() devuelve un objeto temporal de la superclase que permite invocar sus métodos (especialmente el __init__)."
-  },
-  {
+        "explicacion": "super() devuelve un objeto temporal de la superclase que permite invocar sus métodos (especialmente el __init__).",
+    },
+    {
         "tipo": "Multiple",
         "pregunta": "¿Cuál es la función principal del Encapsulamiento?",
-        "opciones": ["A) Hacer el código más rápido", "B) Proteger los datos internos de accesos no autorizados", "C) Copiar atributos de otra clase"],
+        "opciones": [
+            "A) Hacer el código más rápido",
+            "B) Proteger los datos internos de accesos no autorizados",
+            "C) Copiar atributos de otra clase",
+        ],
         "respuesta": "b",
-        "explicacion": "El encapsulamiento restringe el acceso directo a los datos para evitar modificaciones accidentales o incorrectas."
-  },
-  {
+        "explicacion": "El encapsulamiento restringe el acceso directo a los datos para evitar modificaciones accidentales o incorrectas.",
+    },
+    {
         "tipo": "Multiple",
         "pregunta": "En Python, ¿qué significa que un atributo empiece con doble guion bajo (__) ?",
-        "opciones": ["A) Es un atributo público", "B) Activa el 'name mangling' para hacerlo privado", "C) Es un error de sintaxis"],
+        "opciones": [
+            "A) Es un atributo público",
+            "B) Activa el 'name mangling' para hacerlo privado",
+            "C) Es un error de sintaxis",
+        ],
         "respuesta": "b",
-        "explicacion": "Python renombra internamente el atributo para dificultar su acceso desde fuera de la clase."
-  },
-  {
+        "explicacion": "Python renombra internamente el atributo para dificultar su acceso desde fuera de la clase.",
+    },
+    {
         "tipo": "Multiple",
         "pregunta": "¿Qué módulo se debe importar para crear clases abstractas en Python?",
         "opciones": ["A) random", "B) abc", "C) math"],
         "respuesta": "b",
-        "explicacion": "El módulo 'abc' (Abstract Base Classes) proporciona las herramientas necesarias para definir abstracciones."
-  }
+        "explicacion": "El módulo 'abc' (Abstract Base Classes) proporciona las herramientas necesarias para definir abstracciones.",
+    },
+    {
+        "tipo": "Completar",
+        "pregunta": "¿Cómo se llama el pilar que oculta la complejidad interna?",
+        "respuesta": "abstraccion",
+        "explicacion": "La Abstracción permite mostrar solo lo esencial al usuario.",
+    },
+    {
+        "tipo": "Completar",
+        "pregunta": "¿Cómo se llama el método que inicializa los atributos de un objeto al nacer?",
+        "respuesta": "__init__",
+        "explicacion": "El método __init__ es el constructor que define el estado inicial de una instancia.",
+    },
+    {
+        "tipo": "Completar",
+        "pregunta": "¿Qué palabra clave se usa para referirse a la instancia actual dentro de una clase?",
+        "respuesta": "self",
+        "explicacion": "Self es el parámetro que permite a los métodos acceder a los atributos y otros métodos del objeto.",
+    },
+    {
+        "tipo": "Completar",
+        "pregunta": "¿Cómo se llama el pilar que permite a una clase hija heredar atributos de una clase padre?",
+        "respuesta": "herencia",
+        "explicacion": "La herencia facilita la reutilización de código creando una jerarquía entre clases.",
+    },
+    {
+        "tipo": "Completar",
+        "pregunta": "¿Qué función se utiliza para llamar a un método de la clase padre desde la clase hija?",
+        "respuesta": "super",
+        "explicacion": "La función super() devuelve un objeto delegado que permite invocar métodos de la superclase.",
+    },
+    {
+        "tipo": "Completar",
+        "pregunta": "¿Cómo se llama la capacidad de objetos de diferentes clases de responder al mismo mensaje?",
+        "respuesta": "polimorfismo",
+        "explicacion": "El polimorfismo permite tratar a diferentes objetos de manera uniforme a través de una interfaz común.",
+    },
+    {
+        "tipo": "Completar",
+        "pregunta": "¿Qué pilar de la POO consiste en agrupar datos y métodos, protegiendo el acceso directo?",
+        "respuesta": "encapsulamiento",
+        "explicacion": "El encapsulamiento protege la integridad de los datos internos mediante modificadores de acceso o convenciones.",
+    },
+    {
+        "tipo": "Completar",
+        "pregunta": "¿Qué palabra clave se usa en un método vacío para evitar un error de indentación?",
+        "respuesta": "pass",
+        "explicacion": "Pass es una operación nula que sirve como marcador de posición cuando la sintaxis requiere una sentencia.",
+    }
 ]
