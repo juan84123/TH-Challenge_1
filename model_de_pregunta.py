@@ -1,13 +1,15 @@
-class Preguntas:
+#from abc import ABC, abstractmethod
+#Preguntas(ABC)
+class Preguntas():
     def __init__(self, tipo, pregunta, respuesta, explicacion):
         self.tipo = tipo
         self.pregunta = pregunta
         self.respuesta = respuesta.lower()
         self.explicacion = explicacion
-
+    #@abstractmethod # Este decorador la hace "obligatoria obligatoria"
     def es_correcta(self, respuesta):
         pass
-
+    #@abstractmethod # Este decorador la hace "obligatoria obligatoria"    
     def pedir_respuesta(self):
         pass
 
