@@ -231,5 +231,5 @@ base_de_preguntas = [
         "pregunta": "¿Qué palabra clave se usa en un método vacío para evitar un error de indentación?",
         "respuesta": "pass",
         "explicacion": "Pass es una operación nula que sirve como marcador de posición cuando la sintaxis requiere una sentencia.",
-    }
+    },
 ]
