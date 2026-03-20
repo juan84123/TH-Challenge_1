@@ -8,7 +8,7 @@ from ui_consola import InterfazConsola
 random.shuffle(base_de_preguntas)
 # toma los primeros 20 elementos de la lista, [inicio : fin]
 preguntas_seleccionadas = base_de_preguntas[:20]
-# se inicializa una lista vacia
+# se inicializa una lista vacia, para las lista de objetos
 banco_de_preguntas = []
 
 for pregunta in preguntas_seleccionadas:

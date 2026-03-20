@@ -6,10 +6,10 @@ class Preguntas():
         self.pregunta = pregunta
         self.respuesta = respuesta.lower()
         self.explicacion = explicacion
-    #@abstractmethod # Este decorador la hace "obligatoria obligatoria"
+    #@abstractmethod # Este decorador la hace "obligatoria"
     def es_correcta(self, respuesta):
         pass
-    #@abstractmethod # Este decorador la hace "obligatoria obligatoria"    
+    #@abstractmethod # Este decorador la hace "obligatoria"    
     def pedir_respuesta(self):
         pass
 
