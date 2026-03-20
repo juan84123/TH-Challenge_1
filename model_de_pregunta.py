@@ -12,6 +12,9 @@ class Preguntas:
 class PreguntaVoF(Preguntas):
     def es_correcta(self, respuesta):
         return respuesta.lower() == self.respuesta
+    
+    def pedir_respuesta(self):
+        return input("(Verdadero/Falso): ")
 
 
 class PreguntaMultiple(Preguntas):
@@ -28,8 +31,19 @@ class PreguntaMultiple(Preguntas):
     def es_correcta(self, respuesta):
         # Comparamos la letra que elija el usuario (ej: "a") con la respuesta
         return respuesta.lower() == self.respuesta
+    
+
+    def pedir_respuesta(self):
+        for opcion in self.opciones:
+            print(opcion)
+        return input("Tu respuesta (A/B/C): ")
+
 
 
 class PreguntaCompletar(Preguntas):
     def es_correcta(self, respuesta):
-        return respuesta.lower() == self.respuesta
+        #strip() elimina espacios en blanco, saltos de línea (\n) y tabuladores (\t) al inicio y al final de una cadena
+        return respuesta.lower().strip() == self.respuesta
+
+    def pedir_respuesta(self):
+        return input("Escribe tu respuesta: ")

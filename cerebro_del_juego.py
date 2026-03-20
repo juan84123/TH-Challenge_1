@@ -22,4 +22,4 @@ class Cerebro:
             else:
                 ui.mostrar_resultado(False, p.explicacion, self.get_score())
 
-        ui.finalizar_juego(self.score, self.numero_de_pregunta)
+        ui.finalizar_juego(self.get_score(), self.numero_de_pregunta)
