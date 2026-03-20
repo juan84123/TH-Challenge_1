@@ -11,7 +11,7 @@ class Preguntas:
     def pedir_respuesta(self):
         pass
 
-
+#Herencia
 class PreguntaVoF(Preguntas):
     def es_correcta(self, respuesta):
         return respuesta.lower() == self.respuesta
@@ -20,7 +20,7 @@ class PreguntaVoF(Preguntas):
     def pedir_respuesta(self):
         return input("(Verdadero/Falso): ")
 
-
+#Herencia
 class PreguntaMultiple(Preguntas):
     # sobrescribe el init del padre
     def __init__(
@@ -43,7 +43,7 @@ class PreguntaMultiple(Preguntas):
             print(opcion)
         return input("Tu respuesta (A/B/C): ")
 
-
+#Herencia
 class PreguntaCompletar(Preguntas):
     def es_correcta(self, respuesta):
         # strip() elimina espacios en blanco, saltos de línea (\n) y tabuladores (\t) al inicio y al final de una cadena

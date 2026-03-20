@@ -1,6 +1,7 @@
 class InterfazConsola:
     def mostrar_pregunta(self, numero, pregunta):
         print(f"Q.{numero}: {pregunta.pregunta}")
+        #Polimorfismo
         return pregunta.pedir_respuesta()
 
     def mostrar_resultado(self, es_correcto, explicacion, score_actual):

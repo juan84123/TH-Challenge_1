@@ -2,6 +2,7 @@ class Cerebro:
     def __init__(self, banco_de_preguntas):
         self.numero_de_pregunta = 0
         self.banco_de_preguntas = banco_de_preguntas
+        #Encapsulamiento
         self.__score = 0
 
     # Encapsulamiento
@@ -18,6 +19,7 @@ class Cerebro:
             pregunta_actual = self.banco_de_preguntas[self.numero_de_pregunta]
             self.numero_de_pregunta += 1
 
+            #Abstracción
             usuario_res = ui.mostrar_pregunta(self.numero_de_pregunta, pregunta_actual)
             if pregunta_actual.es_correcta(usuario_res):
                 self.sumar_punto()

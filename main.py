@@ -35,6 +35,7 @@ for pregunta in preguntas_seleccionadas:
             pregunta["explicacion"],
         )
     # lista de instancias u objetos
+    #Polimorfismo
     banco_de_preguntas.append(nueva_pregunta)
 
 # Se crea obejto que sera la interfaz grafica
